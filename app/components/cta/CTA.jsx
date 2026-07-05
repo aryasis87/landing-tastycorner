@@ -18,7 +18,7 @@ export default function CTA() {
           Bergabunglah bersama kami dan mulai perjalanan kuliner Anda menuju kelezatan tak terlupakan!
         </p>
         <a
-          href="/contact"
+          href="#leadform"
           className="inline-block bg-indigo-900 text-white px-10 py-4 rounded-full font-semibold hover:bg-indigo-800 transition"
         >
           Hubungi Kami

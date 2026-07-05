@@ -64,10 +64,10 @@ export default function Header() {
         </Link>
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 lg:space-x-8 text-white text-xl">
-          <Link href="/about" className="hover:text-indigo-600 transition">
+          <Link href="#testimonials" className="hover:text-indigo-600 transition">
             About
           </Link>
-          <Link href="/contact" className="hover:text-indigo-600 transition">
+          <Link href="#leadform" className="hover:text-indigo-600 transition">
             Contact
           </Link>
         </nav>
@@ -116,7 +116,7 @@ export default function Header() {
             <ul className="flex flex-col text-gray-100 text-lg items-center space-y-4 p-4">
               <li>
                 <Link
-                  href="/about"
+                  href="#testimonials"
                   onClick={() => setIsMenuOpen(false)}
                   className="block hover:text-indigo-600 transition"
                 >
@@ -125,7 +125,7 @@ export default function Header() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="#leadform"
                   onClick={() => setIsMenuOpen(false)}
                   className="block hover:text-indigo-600 transition"
                 >
