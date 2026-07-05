@@ -20,8 +20,10 @@
   }
 }
 
+h1, h2, h3 { font-family: var(--font-bricolage), system-ui, sans-serif; letter-spacing: -0.02em; }
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), 'Inter', sans-serif;
   background-color: #f8fafc;
   color: #1f2937;
   line-height: 1.6;
