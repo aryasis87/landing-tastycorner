@@ -4,10 +4,10 @@ import "./globals.css";
 const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], weight: ["500", "700", "800"] });
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"FoodEstablishment","name":"Tasty Corner","description":"Strategi F&B menggugah selera","url":"https://landing-tastycorner.vercel.app","areaServed":"ID"};
+const __jsonld = {"@context":"https://schema.org","@type":"FoodEstablishment","name":"Tasty Corner","description":"Strategi F&B menggugah selera","url":"https://tastycorner.pintuweb.com","areaServed":"ID"};
 
 export const metadata = {
-  metadataBase: new URL("https://landing-tastycorner.vercel.app"),
+  metadataBase: new URL("https://tastycorner.pintuweb.com"),
   title: "Tasty Corner — Strategi F&B yang Menggugah Selera",
   description: "Tasty Corner: hadirkan cita rasa terbaik untuk audiensmu dan ubah mereka menjadi pelanggan setia.",
   applicationName: "Tasty Corner",
@@ -15,11 +15,11 @@ export const metadata = {
   authors: [{ name: "Tasty Corner" }],
   creator: "Tasty Corner",
   publisher: "Tasty Corner",
-  alternates: { canonical: "https://landing-tastycorner.vercel.app" },
+  alternates: { canonical: "https://tastycorner.pintuweb.com" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://landing-tastycorner.vercel.app",
+    url: "https://tastycorner.pintuweb.com",
     siteName: "Tasty Corner",
     title: "Tasty Corner — Strategi F&B yang Menggugah Selera",
     description: "Tasty Corner: hadirkan cita rasa terbaik untuk audiensmu dan ubah mereka menjadi pelanggan setia.",
