@@ -44,7 +44,7 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="leadform" className="p-8 py-18 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white text-center">
+    <section id="leadform" className="p-8 py-18 bg-gradient-to-r from-tomato to-tomato text-receipt text-center">
       <motion.h2 
         variants={fadeIn}
         initial="hidden"
@@ -53,7 +53,7 @@ export default function LeadForm() {
       >
         Tetap Selangkah Lebih Maju
       </motion.h2>
-      <p className="text-lg mb-12 text-indigo-300 px-4 md:px-8 max-w-2xl mx-auto">
+      <p className="text-lg mb-12 text-tomato px-4 md:px-8 max-w-2xl mx-auto">
         Berlangganan untuk mendapatkan pembaruan eksklusif, wawasan terbaru, dan strategi langsung ke email Anda.
       </p>
       <form onSubmit={handleSubmit} className="space-y-6 max-w-lg mx-auto">
@@ -66,10 +66,10 @@ export default function LeadForm() {
             onChange={handleChange}
             required
             className={`w-full p-4 rounded-lg border focus:ring-2 bg-[#00000020] ${
-              errors.name ? "border-red-500 ring-red-500" : "border-gray-300 focus:ring-indigo-500"
+              errors.name ? "border-tomato/30 ring-tomato" : "border-carbon/12 focus:ring-tomato"
             } transition`}
           />
-          {errors.name && <p className="text-red-400 text-sm mt-2">{errors.name}</p>}
+          {errors.name && <p className="text-tomato text-sm mt-2">{errors.name}</p>}
         </motion.div>
         <motion.div variants={fadeIn} initial="hidden" animate="visible" className="relative">
           <input
@@ -80,10 +80,10 @@ export default function LeadForm() {
             onChange={handleChange}
             required
             className={`w-full p-4 rounded-lg border focus:ring-2 bg-[#00000020] ${
-              errors.email ? "border-red-500 ring-red-500" : "border-gray-300 focus:ring-indigo-500"
+              errors.email ? "border-tomato/30 ring-tomato" : "border-carbon/12 focus:ring-tomato"
             } transition`}
           />
-          {errors.email && <p className="text-red-400 text-sm mt-2">{errors.email}</p>}
+          {errors.email && <p className="text-tomato text-sm mt-2">{errors.email}</p>}
         </motion.div>
         <motion.button
           variants={fadeIn}
@@ -91,11 +91,11 @@ export default function LeadForm() {
           animate="visible"
           type="submit"
           disabled={loading}
-          className="w-full bg-yellow-400 text-indigo-900 py-4 rounded-lg font-bold hover:bg-yellow-300 transition flex justify-center items-center gap-2"
+          className="w-full bg-tomato text-receipt py-4 rounded-lg font-bold hover:bg-tomato transition flex justify-center items-center gap-2"
         >
           {loading ? (
             <>
-              <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-indigo-900"></span>
+              <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-tomato/30"></span>
               Mengirim...
             </>
           ) : (

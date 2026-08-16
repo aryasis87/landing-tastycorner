@@ -8,10 +8,10 @@ export default function Footer() {
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="bg-gray-800 text-white py-4"
+      className="bg-carbon text-receipt py-4"
     >
-      <div className="container text-gray-300 mx-auto px-6 text-sm md:text-base text-center">
-        <p>© {new Date().getFullYear()} Sanzystore. All rights reserved.</p>
+      <div className="container text-receipt/75 mx-auto px-6 text-sm md:text-base text-center">
+        <p>© {new Date().getFullYear()} Tasty Corner. All rights reserved.</p>
       </div>
     </motion.footer>
   );

@@ -1,40 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   Tasty Corner — bahasa rupa STRUK.
+   Berbeda lagi dari dua tetangganya: bukan papan nama, bukan kartu resep,
+   melainkan struk belanja — kertas putih, huruf rata lebar, garis sobek
+   putus-putus, dan angka yang berbaris rapi. Lugas dan cepat dibaca.
+   ========================================================================== */
+
+@theme {
+  --color-receipt: #fcfbf9;     /* kertas struk */
+  --color-receipt-2: #efedea;
+  --color-carbon: #16151a;      /* tinta */
+  --color-carbon-soft: #5c5a63;
+  --color-tomato: #d63b1f;      /* cap merah */
+  --color-tomato-2: #a82c15;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer base {
+  body { font-family: var(--font-inter), system-ui, sans-serif; background-color: var(--color-receipt); color: var(--color-carbon-soft); }
+  h1, h2, h3 { font-family: var(--font-bricolage), system-ui, sans-serif; letter-spacing: -0.035em; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Garis sobek struk */
+.tear-line { height: 1px; background-image: linear-gradient(to right, currentColor 0 6px, transparent 6px 12px); background-size: 12px 1px; background-repeat: repeat-x; opacity: 0.35; }
+
+.receipt-label { font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-h1, h2, h3 { font-family: var(--font-bricolage), system-ui, sans-serif; letter-spacing: -0.02em; }
-
-body {
-  font-family: var(--font-inter), 'Inter', sans-serif;
-  background-color: #f8fafc;
-  color: #1f2937;
-  line-height: 1.6;
-}
-
-/* Custom input styling */
-input::placeholder {
-  color: #9ca3af;
-}
-
-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-tomato);
+  outline-offset: 3px;
 }

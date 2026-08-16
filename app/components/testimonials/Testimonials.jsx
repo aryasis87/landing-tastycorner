@@ -32,12 +32,12 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 md:py-22 px-4 bg-gray-50">
+    <section id="testimonials" className="py-16 md:py-22 px-4 bg-receipt">
       <motion.h2 
         variants={fadeIn}
         initial="hidden"
         animate="visible"
-        className="text-center text-3xl md:text-4xl lg:text-5xl  font-bold mb-12 text-gray-800"
+        className="text-center text-3xl md:text-4xl lg:text-5xl  font-bold mb-12 text-carbon"
       >
         Apa Kata Klien Kami
       </motion.h2>
@@ -47,28 +47,28 @@ export default function Testimonials() {
             key={testimonial.id} 
             variants={fadeIn} 
             whileHover={{ scale: 0.95 }}
-            className="p-6 md:p-4 bg-white rounded-lg shadow-lg border-t-4 border-indigo-600 transform transition duration-300 ease-in-out hover:shadow-2xl"
+            className="p-6 md:p-4 bg-receipt rounded-lg shadow-lg border-t-4 border-tomato/30 transform transition duration-300 ease-in-out hover:shadow-2xl"
           >
             <div className="flex items-center space-x-5 md:space-x-3">
               {/* Foto Klien */}
               <img 
                 src={testimonial.photo} 
                 alt={testimonial.name} 
-                className="w-14 h-14 md:w-16 object-contain md:h-16 rounded-full border-4 border-indigo-600" 
+                className="w-14 h-14 md:w-16 object-contain md:h-16 rounded-full border-4 border-tomato/30" 
               />
               <div>
-                <h4 className="font-semibold text-xl text-gray-900 line-clamp-1">{testimonial.name}</h4>
-                <p className="text-sm text-gray-500 line-clamp-2">{testimonial.job}</p>
+                <h4 className="font-semibold text-xl text-carbon line-clamp-1">{testimonial.name}</h4>
+                <p className="text-sm text-carbon-soft line-clamp-2">{testimonial.job}</p>
               </div>
             </div>
-            <p className="text-base md:text-lg italic text-gray-700 mt-4 md:mt-6 line-clamp-3 md:line-clamp-4">"{testimonial.text}"</p>
+            <p className="text-base md:text-lg italic text-carbon mt-4 md:mt-6 line-clamp-3 md:line-clamp-4">"{testimonial.text}"</p>
             <div className="mt-4 flex items-center">
               {/* Rating */}
               {[...Array(5)].map((_, index) => (
                 <svg
                   key={index}
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`w-6 h-6 ${index < testimonial.rating ? 'text-yellow-500' : 'text-gray-300'}`}
+                  className={`w-6 h-6 ${index < testimonial.rating ? 'text-tomato' : 'text-carbon-soft'}`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"

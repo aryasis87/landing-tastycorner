@@ -59,15 +59,15 @@ export default function Header() {
     >
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-white">
+        <Link href="/" className="text-2xl font-bold text-receipt">
           LeadGenPro
         </Link>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 lg:space-x-8 text-white text-xl">
-          <Link href="#testimonials" className="hover:text-indigo-600 transition">
+        <nav className="hidden md:flex space-x-6 lg:space-x-8 text-receipt text-xl">
+          <Link href="#testimonials" className="hover:text-tomato transition">
             About
           </Link>
-          <Link href="#leadform" className="hover:text-indigo-600 transition">
+          <Link href="#leadform" className="hover:text-tomato transition">
             Contact
           </Link>
         </nav>
@@ -79,7 +79,7 @@ export default function Header() {
               initial={{ rotate: 0 }}
               animate={{ rotate: 90 }}
               transition={{ duration: 0.3 }}
-              className="w-8 h-8 text-white"
+              className="w-8 h-8 text-receipt"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ export default function Header() {
               initial={{ rotate: 0 }}
               animate={{ rotate: 90 }}
               transition={{ duration: 0.3 }}
-              className="w-8 h-8 text-white"
+              className="w-8 h-8 text-receipt"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -113,12 +113,12 @@ export default function Header() {
             variants={mobileMenuVariants}
             className="md:hidden bg-[#0000005] backdrop-blur-sm"
           >
-            <ul className="flex flex-col text-gray-100 text-lg items-center space-y-4 p-4">
+            <ul className="flex flex-col text-carbon-soft text-lg items-center space-y-4 p-4">
               <li>
                 <Link
                   href="#testimonials"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-indigo-600 transition"
+                  className="block hover:text-tomato transition"
                 >
                   About
                 </Link>
@@ -127,7 +127,7 @@ export default function Header() {
                 <Link
                   href="#leadform"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block hover:text-indigo-600 transition"
+                  className="block hover:text-tomato transition"
                 >
                   Contact
                 </Link>

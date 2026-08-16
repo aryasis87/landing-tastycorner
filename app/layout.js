@@ -1,4 +1,5 @@
 import { Bricolage_Grotesque, Inter } from "next/font/google";
+import MotionProvider from "./components/MotionProvider";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], weight: ["500", "700", "800"] });
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <body className={`${bricolage.variable} ${inter.variable} antialiased`}>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
         </body>
     </html>

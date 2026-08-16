@@ -8,7 +8,7 @@ export default function CTA() {
       initial="hidden"
       animate="visible"
       variants={fadeIn}
-      className="py-20 bg-yellow-400 text-indigo-900 text-center"
+      className="py-20 bg-tomato text-receipt text-center"
     >
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -19,7 +19,7 @@ export default function CTA() {
         </p>
         <a
           href="#leadform"
-          className="inline-block bg-indigo-900 text-white px-10 py-4 rounded-full font-semibold hover:bg-indigo-800 transition"
+          className="inline-block bg-tomato text-receipt px-10 py-4 rounded-full font-semibold hover:bg-tomato transition"
         >
           Hubungi Kami
         </a>

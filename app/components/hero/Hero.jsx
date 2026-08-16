@@ -122,7 +122,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex justify-center items-center bg-black text-white overflow-hidden">
+    <section className="relative h-screen flex justify-center items-center bg-black text-receipt overflow-hidden">
       {/* Latar Belakang Gradien Dinamis */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -135,12 +135,12 @@ export default function Hero() {
       <motion.div
         variants={floatingVariants}
         animate="animate"
-        className="absolute top-20 left-10 w-14 h-14 bg-purple-500 rounded-full blur-2xl opacity-70"
+        className="absolute top-20 left-10 w-14 h-14 bg-tomato rounded-full blur-2xl opacity-70"
       />
       <motion.div
         variants={floatingVariants}
         animate="animate"
-        className="absolute bottom-20 right-20 w-20 h-20 bg-blue-500 rounded-full blur-2xl opacity-70"
+        className="absolute bottom-20 right-20 w-20 h-20 bg-tomato rounded-full blur-2xl opacity-70"
       />
       <motion.div
         variants={floatingVariants}
@@ -212,9 +212,10 @@ export default function Hero() {
           variants={fadeIn}
           className="text-4xl md:text-7xl font-extrabold leading-tight mb-4 px-8 md:px-0"
         >
-          Selezat  <span className="text-indigo-400">Hidangan </span> Andalanmu!
+          Selezat  <span className="text-tomato">Hidangan </span> Andalanmu!
         </motion.h1>
-        <motion.p variants={fadeIn} className="text-base md:text-2xl mb-8 px-8 md:px-0 line-clamp-3 shadow-lg">
+        {/* Tanpa variants: paragraf pembuka harus terbaca walau animasinya gagal. */}
+        <motion.p className="mb-8 line-clamp-3 px-8 text-base shadow-lg md:px-0 md:text-2xl">
         Hadirkan cita rasa terbaik untuk audiensmu dan ubah mereka menjadi pelanggan setia. Sajikan strategi yang menggugah selera!
         </motion.p>
         <motion.div variants={scaleIn} className="flex justify-center space-x-4 md:space-x-6 lg:space-x-8">
@@ -222,7 +223,7 @@ export default function Hero() {
             onClick={handleGetStarted}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="px-5 py-2 md:px-8 md:py-3 lg:px-10 py-3 bg-indigo-600 text-white rounded-full text-lg lg:text-2xl font-semibold hover:bg-indigo-400 transition"
+            className="px-5 py-2 md:px-8 md:py-3 lg:px-10 py-3 bg-tomato text-receipt rounded-full text-lg lg:text-2xl font-semibold hover:bg-tomato transition"
           >
             Berlangganan
           </motion.button>
@@ -230,7 +231,7 @@ export default function Hero() {
             onClick={handleLearnMore}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="px-5 py-2 md:px-8 md:py-3 lg:px-10 py-3 border-2 border-indigo-400 text-white rounded-full text-lg lg:text-2xl font-semibold transition"
+            className="px-5 py-2 md:px-8 md:py-3 lg:px-10 py-3 border-2 border-tomato/30 text-receipt rounded-full text-lg lg:text-2xl font-semibold transition"
           >
             Konsultasi
           </motion.button>
@@ -242,7 +243,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 10 }}
         transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-receipt"
       >
         <svg
           className="w-6 h-6 animate-bounce"
