@@ -53,7 +53,7 @@ export default function LeadForm() {
       >
         Tetap Selangkah Lebih Maju
       </motion.h2>
-      <p className="text-lg mb-12 text-tomato px-4 md:px-8 max-w-2xl mx-auto">
+      <p className="mx-auto mb-12 max-w-2xl px-4 text-lg text-receipt md:px-8">
         Berlangganan untuk mendapatkan pembaruan eksklusif, wawasan terbaru, dan strategi langsung ke email Anda.
       </p>
       <form onSubmit={handleSubmit} className="space-y-6 max-w-lg mx-auto">

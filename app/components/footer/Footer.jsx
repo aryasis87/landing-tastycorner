@@ -10,7 +10,7 @@ export default function Footer() {
       variants={fadeIn}
       className="bg-carbon text-receipt py-4"
     >
-      <div className="container text-receipt/75 mx-auto px-6 text-sm md:text-base text-center">
+      <div className="container text-receipt/90 mx-auto px-6 text-sm md:text-base text-center">
         <p>© {new Date().getFullYear()} Tasty Corner. All rights reserved.</p>
       </div>
     </motion.footer>
