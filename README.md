@@ -1,26 +1,39 @@
-# Landing Page Lead Generation
+# Tasty Corner — Strategi F&B yang Menggugah Selera
 
-Proyek landing page lead generation modern dengan animasi penuh, dibangun menggunakan Next.js, Tailwind CSS, dan Framer Motion.
+Tasty Corner: hadirkan cita rasa terbaik untuk audiensmu dan ubah mereka menjadi pelanggan setia.
 
-## Fitur
+**Demo live:** https://landing-tastycorner.vercel.app
 
-- Animasi penuh dengan Framer Motion
-- Desain responsif dan modern
-- Formulir lead generation menggunakan layanan gratis (misal Formspree)
-- Komponen modular dan reusable
-- Struktur file terorganisir untuk kemudahan pengembangan dan skalabilitas
+![Tangkapan layar Tasty Corner](public/og.jpg)
 
-## Instalasi
+> Template landing page untuk bisnis fiktif. Formulir di dalamnya hanya demo dan tidak mengirim data.
 
-1. Clone repository ini.
-2. Jalankan `npm install` untuk menginstal semua dependensi.
-3. Jalankan `npm run dev` untuk memulai server pengembangan.
+## Konsep
 
-## Konfigurasi
+Bahasa rupa **Struk** belanja: kertas putih, huruf rata lebar, garis sobek putus-putus, dan angka yang berbaris rapi. Lugas dan cepat dibaca.
 
-- Sesuaikan variabel warna di `app/globals.css`.
-- Update endpoint Formspree di komponen `LeadForm.jsx` atau di file `.env.local`.
+## Halaman
 
-## Lisensi
+`/`
 
-Proyek ini dilisensikan di bawah MIT License.
+## Teknologi
+
+- Next.js 15.5 (App Router) dan React 19
+- Tailwind CSS v4
+- JavaScript
+- Heroicons, Framer Motion
+- Font: Bricolage Grotesque, Inter (next/font)
+- SEO: metadata per halaman, Open Graph, JSON-LD, sitemap.xml, dan robots.txt
+
+## Menjalankan secara lokal
+
+```bash
+npm install
+npm run dev
+```
+
+Buka http://localhost:3000. Untuk build produksi: `npm run build` lalu `npm start`.
+
+---
+
+Bagian dari koleksi 17 template landing page di [PortalLanding](https://portal-landing-seven.vercel.app). Dibuat oleh [PintuWeb](https://pintuweb.com), jasa pembuatan website.
