@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/animations";
-import { submitLead } from "@/lib/email";
 
 export default function LeadForm() {
   const [formData, setFormData] = useState({ name: "", email: "" });
@@ -33,8 +32,9 @@ export default function LeadForm() {
 
     setLoading(true);
     try {
-      await submitLead(formData);
-      setMessage("🎉 Berhasil! Anda sekarang sudah berlangganan.");
+      // Halaman contoh: data tidak dikirim ke mana pun (lihat pesan sukses).
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      setMessage("Terima kasih! Ini halaman contoh, jadi data Anda tidak dikirim ke mana pun.");
       setFormData({ name: "", email: "" });
     } catch (error) {
       setMessage("❌ Terjadi kesalahan. Silakan coba lagi.");
