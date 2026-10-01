@@ -1,6 +1,6 @@
-# Tasty Corner — Strategi F&B yang Menggugah Selera
+# Tasty Corner — Struk Mingguan untuk Usaha Makanan
 
-Tasty Corner: hadirkan cita rasa terbaik untuk audiensmu dan ubah mereka menjadi pelanggan setia.
+Struk Mingguan dari Tasty Corner: buletin gratis tiap Senin untuk warung, kedai, dan kafe — satu menu dibedah sampai rupiah terakhir. Plus kalkulator food cost.
 
 **Demo live:** https://landing-tastycorner.vercel.app
 
@@ -14,15 +14,17 @@ Bahasa rupa **Struk** belanja: kertas putih, huruf rata lebar, garis sobek putus
 
 ## Halaman
 
-`/`
+- `/` — Struk Mingguan: buletin angka F&B tiap Senin, dengan cuplikan edisi terbaru
+- `/edisi` — arsip edisi
+- `/edisi/[slug]` — satu menu dibedah sampai rupiah terakhir
+- `/kalkulator` — kalkulator food cost interaktif
 
 ## Teknologi
 
 - Next.js 15.5 (App Router) dan React 19
 - Tailwind CSS v4
 - JavaScript
-- Heroicons, Framer Motion
-- Font: Bricolage Grotesque, Inter (next/font)
+- Font: Bricolage Grotesque, IBM Plex Mono, Inter (next/font)
 - SEO: metadata per halaman, Open Graph, JSON-LD, sitemap.xml, dan robots.txt
 
 ## Menjalankan secara lokal
