@@ -1,19 +1,17 @@
-// app/not-found.js
-import Link from 'next/link';
+import Link from "next/link";
+
+export const metadata = { title: "Struk tidak ditemukan" };
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white text-gray-800 font-sans">
-      <div className="text-center max-w-lg px-6 py-12">
-        <h1 className="text-6xl font-extrabold mb-4 text-gray-900">404</h1>
-        <p className="text-lg mb-6 text-gray-600">Oops! The page you&apos;re looking for doesn&apos;t exist.</p>
-        <Link
-          href="/"
-          className="inline-block bg-gray-900 text-white py-3 px-8 rounded-md text-lg font-semibold hover:bg-gray-800 transition duration-300"
-        >
-          Go Back Home
-        </Link>
+    <main className="flex min-h-[80vh] items-center bg-carbon px-6 pt-20">
+      <div className="struk mx-auto w-full max-w-sm px-6 py-8 text-center">
+        <p className="font-semibold tracking-widest">TASTY CORNER</p>
+        <p className="struk-garis mt-4 pt-4 text-4xl font-semibold">404</p>
+        <h1 className="mt-2 font-[family-name:var(--font-bricolage)] text-2xl font-extrabold text-carbon">Struk ini tidak pernah dicetak</h1>
+        <p className="struk-garis mt-4 pt-4 text-sm">Halaman yang Anda cari tidak ada.</p>
+        <Link href="/" className="mt-6 inline-flex bg-carbon px-5 py-3 text-sm font-semibold text-receipt hover:bg-tomato-2">KEMBALI KE BERANDA</Link>
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,115 +1,61 @@
-"use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/animations";
+'use client';
+
+import { useState } from 'react';
+
+const USAHA = ['Warung makan', 'Kedai kopi', 'Kafe', 'Katering', 'Gerobak / kaki lima', 'Lainnya'];
 
 export default function LeadForm() {
-  const [formData, setFormData] = useState({ name: "", email: "" });
-  const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [selesai, setSelesai] = useState(false);
 
-  const validate = () => {
-    let tempErrors = {};
-    if (!formData.name.trim()) tempErrors.name = "Nama wajib diisi";
-    if (!formData.email.trim()) {
-      tempErrors.email = "Email wajib diisi";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      tempErrors.email = "Format email tidak valid";
-    }
-    setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0;
-  };
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
-  };
-
-  const handleSubmit = async (e) => {
+  const kirim = (e) => {
     e.preventDefault();
-    if (!validate()) return;
-
-    setLoading(true);
-    try {
-      // Halaman contoh: data tidak dikirim ke mana pun (lihat pesan sukses).
-      await new Promise((resolve) => setTimeout(resolve, 600));
-      setMessage("Terima kasih! Ini halaman contoh, jadi data Anda tidak dikirim ke mana pun.");
-      setFormData({ name: "", email: "" });
-    } catch (error) {
-      setMessage("❌ Terjadi kesalahan. Silakan coba lagi.");
-    } finally {
-      setLoading(false);
-    }
+    // Purwarupa desain: tidak ada data yang dikirim ke mana pun.
+    setSelesai(true);
   };
+
+  const input = 'w-full border border-carbon/25 bg-receipt px-4 py-3 text-carbon focus:border-tomato-2 focus:outline-none';
 
   return (
-    <section id="leadform" className="p-8 py-18 bg-gradient-to-r from-tomato to-tomato text-receipt text-center">
-      <motion.h2 
-        variants={fadeIn}
-        initial="hidden"
-        animate="visible"
-        className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 px-4 leading-tight"
-      >
-        Tetap Selangkah Lebih Maju
-      </motion.h2>
-      <p className="mx-auto mb-12 max-w-2xl px-4 text-lg text-receipt md:px-8">
-        Berlangganan untuk mendapatkan pembaruan eksklusif, wawasan terbaru, dan strategi langsung ke email Anda.
-      </p>
-      <form onSubmit={handleSubmit} className="space-y-6 max-w-lg mx-auto">
-        <motion.div variants={fadeIn} initial="hidden" animate="visible" className="relative">
-          <input
-            type="text"
-            name="name"
-            placeholder="Nama Anda"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className={`w-full p-4 rounded-lg border focus:ring-2 bg-[#00000020] ${
-              errors.name ? "border-tomato/30 ring-tomato" : "border-carbon/12 focus:ring-tomato"
-            } transition`}
-          />
-          {errors.name && <p className="text-tomato text-sm mt-2">{errors.name}</p>}
-        </motion.div>
-        <motion.div variants={fadeIn} initial="hidden" animate="visible" className="relative">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Anda"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className={`w-full p-4 rounded-lg border focus:ring-2 bg-[#00000020] ${
-              errors.email ? "border-tomato/30 ring-tomato" : "border-carbon/12 focus:ring-tomato"
-            } transition`}
-          />
-          {errors.email && <p className="text-tomato text-sm mt-2">{errors.email}</p>}
-        </motion.div>
-        <motion.button
-          variants={fadeIn}
-          initial="hidden"
-          animate="visible"
-          type="submit"
-          disabled={loading}
-          className="w-full bg-tomato text-receipt py-4 rounded-lg font-bold hover:bg-tomato transition flex justify-center items-center gap-2"
-        >
-          {loading ? (
-            <>
-              <span className="animate-spin rounded-full h-5 w-5 border-t-2 border-tomato/30"></span>
-              Mengirim...
-            </>
+    <section id="langganan" className="scroll-mt-16 bg-tomato-2 px-6 py-20 text-white md:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div>
+          <p className="receipt-label text-white/85">Gratis · berhenti kapan saja</p>
+          <h2 className="mt-4 text-[2rem] leading-[1.08] font-extrabold text-white md:text-[2.8rem]">Satu struk di surel Anda, setiap Senin pukul 06.00</h2>
+          <p className="mt-5 max-w-md leading-relaxed text-white/90">Sebelum pasar ramai, sebelum kompor menyala. Dibaca dalam empat menit.</p>
+        </div>
+        <div className="struk px-6 py-8 sm:px-8">
+          {selesai ? (
+            <div role="status" className="py-6 text-center">
+              <p className="font-semibold tracking-widest">TERIMA KASIH</p>
+              <p className="struk-garis mt-4 pt-4">Ini purwarupa desain — tidak ada data yang dikirim dan tidak ada surel yang akan datang.</p>
+              <button type="button" onClick={() => setSelesai(false)} className="mt-6 border border-carbon px-4 py-2.5 text-sm hover:bg-carbon hover:text-receipt">Isi ulang</button>
+            </div>
           ) : (
-            "Berlangganan"
+            <form onSubmit={kirim} className="space-y-4">
+              <p className="text-center font-semibold tracking-widest">FORMULIR LANGGANAN</p>
+              <div className="struk-garis pt-4">
+                <label htmlFor="nama" className="mb-1.5 block text-sm">Nama</label>
+                <input id="nama" name="nama" required autoComplete="name" className={input} />
+              </div>
+              <div>
+                <label htmlFor="surel" className="mb-1.5 block text-sm">Surel</label>
+                <input id="surel" name="surel" type="email" required autoComplete="email" className={input} />
+              </div>
+              <div>
+                <label htmlFor="usaha" className="mb-1.5 block text-sm">Jenis usaha</label>
+                <select id="usaha" name="usaha" required defaultValue="" className={input}>
+                  <option value="" disabled>Pilih jenis usaha</option>
+                  {USAHA.map((u) => <option key={u}>{u}</option>)}
+                </select>
+              </div>
+              <button type="submit" className="w-full bg-carbon py-3.5 font-semibold tracking-wide text-receipt hover:bg-tomato-2">
+                LANGGANAN GRATIS
+              </button>
+              <p className="text-center text-xs">Purwarupa desain — formulir ini tidak mengirim data.</p>
+            </form>
           )}
-        </motion.button>
-      </form>
-      {message && <motion.p 
-        initial={{ opacity: 0, y: 10 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        className="mt-6 text-lg"
-      >
-        {message}
-      </motion.p>}
+        </div>
+      </div>
     </section>
   );
 }

@@ -14,6 +14,7 @@
   --color-carbon-soft: #5c5a63;
   --color-tomato: #d63b1f;      /* cap merah */
   --color-tomato-2: #a82c15;
+  --color-tomato-bright: #ff7a5c; /* teks kecil di atas karbon */
 }
 
 @layer base {
@@ -25,6 +26,43 @@
 .tear-line { height: 1px; background-image: linear-gradient(to right, currentColor 0 6px, transparent 6px 12px); background-size: 12px 1px; background-repeat: repeat-x; opacity: 0.35; }
 
 .receipt-label { font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* Kertas struk: huruf monospasi, tepi atas dan bawah bergerigi seperti
+   struk yang disobek dari mesin kasir. */
+.struk {
+  --kertas: #fcfbf9;
+  position: relative;
+  background: var(--kertas);
+  color: var(--color-carbon);
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-block: 10px;
+}
+.struk::before,
+.struk::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-size: 14px 10px;
+  background-repeat: repeat-x;
+}
+.struk::before {
+  top: -10px;
+  background-image:
+    linear-gradient(135deg, transparent 50%, var(--kertas) 50%),
+    linear-gradient(-135deg, transparent 50%, var(--kertas) 50%);
+}
+.struk::after {
+  bottom: -10px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--kertas) 50%),
+    linear-gradient(-45deg, transparent 50%, var(--kertas) 50%);
+}
+.struk-garis { border-top: 1px dashed rgb(22 21 26 / 0.35); }
+.mono { font-family: var(--font-plex-mono), ui-monospace, monospace; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
